@@ -54,7 +54,7 @@ El formato es el siguiente:
 }
 ```
 
-Todos los campos son autoexplicativos para cualquiera que juege DnD, para aquellos que no, se explican a continuación.
+Todos los campos son autoexplicativos para cualquiera que juegue DnD, para aquellos que no, se explican a continuación.
 * `name`: El nombre del personaje
 * `hp`: La vida del personaje (sin sumar el modificador de constitución)
 * `ac`: La Clase de Armadura (Armor Class) del personaje, se utiliza para comprobar si un ataque te golpea
