@@ -1,6 +1,7 @@
 {
   "name": "api-dungeons-and-dragons",
   "version": "1.0.0",
+  "type": "module",
   "description": "A small API for use with my DnD VTT.",
   "main": "index.js",
   "author": "KeyKoder <victor.fernandez.montano@gmail.com>",

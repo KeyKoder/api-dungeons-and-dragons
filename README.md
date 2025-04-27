@@ -9,11 +9,12 @@ Una API prototipo para ser utilizada como base en un futuro proyecto de un table
 | ------ | ------ | -------- | ----------- | ------- |
 | TODO | `POST` | `/auth/register` | Registra un nuevo usuario | Usuario y contraseña |
 | TODO | `POST` | `/auth/login` | Inicia la sesión del usuario | Usuario y contraseña |
-| TODO | `GET` | `/characters` | Devuelve los datos de los personajes del usuario (ver [Character Data](#character-data)) | - |
+| DONE | `GET` | `/characters` | Devuelve los datos de los personajes del usuario (ver [Character Data](#character-data)) | - |
 | TODO | `POST` | `/characters` | Crea un personaje nuevo y devuelve sus datos (usando el mismo formato que en `GET /characters`) | [Character Data](#character-data) |
 | TODO | `PUT` | `/characters/:cid` | Modifica el personaje con id `:cid` | [Character Data](#character-data) (se pueden omitir campos que no se vayan a modificar) |
-| TODO | `GET` | `/characters/:cid` | Devuelve los datos del personaje con id `:cid` | - |
+| DONE | `GET` | `/characters/:cid` | Devuelve los datos del personaje con id `:cid` | - |
 | TODO | `GET` | `/characters/:cid/equipment` | Devuelve los datos del equipamiento del personaje con id `:cid` | - |
+| TODO | `POST` | `/characters/:cid/equipment` | Añade un objeto al equipamiento del personaje con id `:cid` | [Equipment Data](#equipment-data) |
 | TODO | `GET` | `/characters/:cid/equipment/:eqid` | Devuelve los datos del objeto con id `:eqid` del equipamiento personaje con id `:cid` | - |
 | TODO | `GET` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
 
@@ -79,6 +80,20 @@ Todos los campos son autoexplicativos para cualquiera que juege DnD, para aquell
         ]
     }
     ```
+* `equipment`: El equipamiento del personaje. Los objetos siguen el formato [Equipment Data](#equipment-data)
+
+## Equipment Data
+
+Por ahora, Equipment Data es un objeto JSON con un formato simple:
+
+```json
+{
+    "name": "",
+    "description": ""
+}
+```
+
+En el futuro probablemente se amplíe este formato.
 
 ## Roll Data
 
@@ -128,6 +143,16 @@ Ejemplos
 }
 ```
 
+## Roll Output
+
+TODO: Explain and define the format. (or link to the source format if we end up using an external library for doing the dice rolls)
+
+```json
+{
+
+}
+```
+
 
 ## Stats
 Las stats de cada personaje se referencian con su correspondiente abreviatura de 3 letras, ya sea en inglés o en español.
@@ -143,3 +168,7 @@ Las stats de cada personaje se referencian con su correspondiente abreviatura de
 # Mejoras posibles
 
 Continuar implementando más elementos de DnD como abilidades o hechizos.
+
+Ampliar el formato de equipamiento.
+
+Cambiar de un JSON en memoria a una base de datos con MariaDB/MySQL

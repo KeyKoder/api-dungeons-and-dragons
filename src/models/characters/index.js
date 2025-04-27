@@ -1,7 +1,29 @@
 'use strict'
 
 const CHARACTERS = [
-    
+    {
+        id: '00000000-0000-0000-0000-000000000000',
+        name: "Pepe",
+        race: "Humano",
+        classes: [
+            {
+                class: "Pícaro",
+                level: 3
+            }
+        ],
+        hp: 15,
+        ac: 10,
+        stats: {
+            str: 10,
+            dex: 12,
+            con: 10,
+            int: 14,
+            wis: 10,
+            cha: 10
+        },
+        equipment: [],
+        owner: '00000000-0000-0000-0000-000000000000'
+    }
 ]
 
 class CharacterModel {
@@ -20,10 +42,25 @@ class CharacterModel {
     add(datos) {
         let newId = this.getLastId() + 1
         CHARACTERS.push({
-            id: newId,
-            title: datos?.title ?? 'N/D',
-            length: datos?.length ?? 0,
-            year: datos?.year ?? 1900,
+            name: "",
+            race: "",
+            classes: [
+                {
+                    class: "",
+                    level: 0
+                }
+            ],
+            hp: 0,
+            ac: 0,
+            stats: {
+                str: 0,
+                dex: 0,
+                con: 0,
+                int: 0,
+                wis: 0,
+                cha: 0
+            },
+            equipment: []
         })
         return newId
     }
