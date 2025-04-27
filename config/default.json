@@ -1,0 +1,6 @@
+{
+    "login": {
+      "key": "supersecret"
+    },
+    "port": 3000
+  }
