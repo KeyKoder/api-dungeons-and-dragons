@@ -35,6 +35,14 @@ class CharacterController {
     delete(id) {
         return characterModel.delete(id)
     }
+    
+    addEquipment(id, data) {
+        return characterModel.addEquipment(id, data)
+    }
+
+    getEquipment(id) {
+        return characterModel.getEquipment(id)
+    }
 }
 
 export default new CharacterController()

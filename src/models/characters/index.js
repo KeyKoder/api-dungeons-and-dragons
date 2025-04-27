@@ -23,7 +23,12 @@ const CHARACTERS = [
             wis: 10,
             cha: 10
         },
-        equipment: [],
+        equipment: [
+            {
+                "name": "Espada Desgastada",
+                "description": "Una espada vieja pero confiable"
+            }
+        ],
         owner: "00000000-0000-0000-0000-000000000000"
     }
 ]
@@ -84,6 +89,19 @@ class CharacterModel {
         if(index == -1) return false
         CHARACTERS.splice(index, 1)
         return true
+    }
+
+    addEquipment(id, data) {
+        let index = CHARACTERS.findIndex(x => x.id === id)
+        if(index == -1) return false
+        CHARACTERS[index].equipment = [...CHARACTERS[index].equipment, data]
+        return true
+    }
+
+    getEquipment(id) {
+        let char = this.getById(id)
+        if(char.length == 0) return null
+        return char[0].equipment
     }
 }
 

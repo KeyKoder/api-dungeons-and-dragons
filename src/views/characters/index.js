@@ -44,6 +44,18 @@ router.param('cid', (req, res, next, cid) => {
         req.character = character
         next()
     }
-} )
+})
+
+router.get('/:cid/equipment', (req, res) => {
+    let equipment = characterController.getEquipment(req.params.cid)
+    if(equipment !== null) res.send(equipment)
+    else res.status(404).send()
+})
+
+router.post('/:cid/equipment', (req, res) => {
+    let ok = characterController.addEquipment(req.params.cid, req.body)
+    if(ok) res.status(200).send()
+    else res.status(404).send()
+})
 
 export default router
