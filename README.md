@@ -7,16 +7,16 @@ Una API prototipo para ser utilizada como base en un futuro proyecto de un table
 # Endpoints
 | Status | Método | Endpoint | Descripción | Payload |
 | ------ | ------ | -------- | ----------- | ------- |
-| NOT GONNA IMPLEMENT | `POST` | `/auth/register` | Registra un nuevo usuario | [User Data](#user-data) |
-| NOT GONNA IMPLEMENT | `POST` | `/auth/login` | Inicia la sesión del usuario | [User Data](#user-data) |
+| PLANNED FOR LATER | `POST` | `/auth/register` | Registra un nuevo usuario | [User Data](#user-data) |
+| PLANNED FOR LATER | `POST` | `/auth/login` | Inicia la sesión del usuario | [User Data](#user-data) |
 | DONE | `GET` | `/characters` | Devuelve los datos de los personajes del usuario (ver [Character Data](#character-data)) | - |
 | DONE | `POST` | `/characters` | Crea un personaje nuevo y devuelve sus datos (usando el mismo formato que en `GET /characters`) | [Character Data](#character-data) |
 | DONE | `PUT` | `/characters/:cid` | Modifica el personaje con id `:cid` y devuelve un 200 si se ha podido modificar y un 404 si no (porque no se encuentra) | [Character Data](#character-data) (se pueden omitir campos que no se vayan a modificar) |
 | DONE | `GET` | `/characters/:cid` | Devuelve los datos del personaje con id `:cid` | - |
 | DONE | `DELETE` | `/characters/:cid` | Elimina el personaje con id `:cid` (si el usuario es el que creó el personaje) y devuelve un 200 si se ha podido modificar y un 404 si no (porque no se encuentra) | - |
-| TODO | `GET` | `/characters/:cid/equipment` | Devuelve los datos del equipamiento del personaje con id `:cid` | - |
-| TODO | `POST` | `/characters/:cid/equipment` | Añade un objeto al equipamiento del personaje con id `:cid` | [Equipment Data](#equipment-data) |
-| TODO | `GET` | `/characters/:cid/equipment/:eqid` | Devuelve los datos del objeto con id `:eqid` del equipamiento personaje con id `:cid` | - |
+| DONE | `GET` | `/characters/:cid/equipment` | Devuelve los datos del equipamiento del personaje con id `:cid` | - |
+| DONE | `POST` | `/characters/:cid/equipment` | Añade un objeto al equipamiento del personaje con id `:cid` | [Equipment Data](#equipment-data) |
+| PLANNED FOR LATER | `GET` | `/characters/:cid/equipment/:eqid` | Devuelve los datos del objeto con id `:eqid` del equipamiento personaje con id `:cid` | - |
 | TODO | `GET` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
 
 Todos los payloads y las respuestas serán formato JSON.
