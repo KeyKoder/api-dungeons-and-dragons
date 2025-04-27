@@ -18,9 +18,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     if(characterController.verifyData(req.body)) {
-        let newId = characterController.add(req.body)
+        let newId = characterController.add(req.body, req.user)
         let character = characterController.getById(newId)
-        res.send(character[0])
+        res.send(character)
     }else {
         res.status(400).send("Character format not valid")
     }

@@ -1,8 +1,10 @@
 'use strict'
 
+import { v4 as uuidv4 } from "uuid"
+
 const CHARACTERS = [
     {
-        id: '00000000-0000-0000-0000-000000000000',
+        id: "00000000-0000-0000-0000-000000000000",
         name: "Pepe",
         race: "Humano",
         classes: [
@@ -22,15 +24,11 @@ const CHARACTERS = [
             cha: 10
         },
         equipment: [],
-        owner: '00000000-0000-0000-0000-000000000000'
+        owner: "00000000-0000-0000-0000-000000000000"
     }
 ]
 
 class CharacterModel {
-    getLastId() {
-        return CHARACTERS.sort((x1, x2) => x2.id - x1.id)[0].id
-    }
-
     getAll() {
         return CHARACTERS
     }
@@ -39,9 +37,10 @@ class CharacterModel {
         return CHARACTERS.filter(x => x.id === id)
     }
 
-    add(datos) {
-        let newId = this.getLastId() + 1
+    add(data, userId) {
+        let newId = uuidv4()
         CHARACTERS.push({
+            id: newId,
             name: "",
             race: "",
             classes: [
@@ -60,9 +59,17 @@ class CharacterModel {
                 wis: 0,
                 cha: 0
             },
-            equipment: []
+            equipment: [],
+            owner: userId,
+            ...data
         })
         return newId
+    }
+
+    verifyData(data) {
+        let required_keys = ["name","race","classes","hp","ac","stats"]
+        let required_stats = ["str","dex","con","int","wis","cha"]
+        return required_keys.every(k => k in data) && required_stats.every(k => k in data.stats) && data.classes.length > 0
     }
 }
 

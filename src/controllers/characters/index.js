@@ -12,7 +12,7 @@ class CharacterController {
     }
 
     getById(id) {
-        let characters = characterModel.getById(Number(id))
+        let characters = characterModel.getById(id)
         if (characters.length > 0) {
             return characters[0]
         } else {
@@ -22,6 +22,10 @@ class CharacterController {
 
     add(data) {
         return characterModel.add(data)
+    }
+
+    verifyData(data) {
+        return characterModel.verifyData(data)
     }
 }
 
