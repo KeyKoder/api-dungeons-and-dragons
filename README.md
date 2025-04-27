@@ -17,7 +17,7 @@ Una API prototipo para ser utilizada como base en un futuro proyecto de un table
 | DONE | `GET` | `/characters/:cid/equipment` | Devuelve los datos del equipamiento del personaje con id `:cid` | - |
 | DONE | `POST` | `/characters/:cid/equipment` | Añade un objeto al equipamiento del personaje con id `:cid` | [Equipment Data](#equipment-data) |
 | PLANNED FOR LATER | `GET` | `/characters/:cid/equipment/:eqid` | Devuelve los datos del objeto con id `:eqid` del equipamiento personaje con id `:cid` | - |
-| TODO | `GET` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
+| TODO | `POST` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
 
 Todos los payloads y las respuestas serán formato JSON.
 
@@ -139,7 +139,7 @@ Ejemplos
 {
     "roll": "1d20+{{mymod}}+{{0:CON}}",
     "context": {
-        "characters": ["cid1", "cid2"],
+        "characters": ["00000000-0000-0000-0000-000000000000"],
         "mymod": 4
     }
 }

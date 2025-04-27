@@ -6,6 +6,7 @@ import { decodeJwt } from "./middlewares/auth.js"
 import bodyParser from "body-parser"
 
 import characterRouter from './characters/index.js'
+import rollRouter from './roll/index.js'
 // import loginRouter from './login/index.js'
 // import registerRouter from './register/index.js'
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded())
 app.use(bodyParser.json())
 
 app.use('/characters', characterRouter)
+app.use('/roll', rollRouter)
 // app.use('/auth/login', loginRouter)
 // app.use('/auth/register', registerRouter)
 

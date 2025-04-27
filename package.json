@@ -17,6 +17,7 @@
     "#utils/*": "./src/utils/*"
   },
   "dependencies": {
+    "@3d-dice/dice-roller-parser": "^0.2.6",
     "body-parser": "^1.20.3",
     "config": "^3.3.12",
     "express": "^4.21.2",
