@@ -27,6 +27,14 @@ class CharacterController {
     verifyData(data) {
         return characterModel.verifyData(data)
     }
+
+    modify(id, data) {
+        return characterModel.modify(id, data)
+    }
+
+    delete(id) {
+        return characterModel.delete(id)
+    }
 }
 
 export default new CharacterController()

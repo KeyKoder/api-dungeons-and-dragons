@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded())
 app.use(bodyParser.json())
 
 app.use('/characters', characterRouter)
-// app.use('/login', loginRouter)
-// app.use('/register', registerRouter)
+// app.use('/auth/login', loginRouter)
+// app.use('/auth/register', registerRouter)
 
 export function start(port) {
     app.listen(port, () => {

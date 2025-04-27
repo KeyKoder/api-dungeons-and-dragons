@@ -1,6 +1,6 @@
 'use strict'
 
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4, NIL as NIL_UUID } from "uuid"
 
 const CHARACTERS = [
     {
@@ -60,7 +60,7 @@ class CharacterModel {
                 cha: 0
             },
             equipment: [],
-            owner: userId,
+            owner: NIL_UUID, // Can't get authentication to work, so for now we are using an all-zeroes UUID
             ...data
         })
         return newId
@@ -70,6 +70,20 @@ class CharacterModel {
         let required_keys = ["name","race","classes","hp","ac","stats"]
         let required_stats = ["str","dex","con","int","wis","cha"]
         return required_keys.every(k => k in data) && required_stats.every(k => k in data.stats) && data.classes.length > 0
+    }
+
+    modify(id, data) {
+        let index = CHARACTERS.findIndex(x => x.id === id)
+        if(index == -1) return false
+        CHARACTERS[index] = {...CHARACTERS[index], ...data}
+        return true
+    }
+
+    delete(id) {
+        let index = CHARACTERS.findIndex(x => x.id === id)
+        if(index == -1) return false
+        CHARACTERS.splice(index, 1)
+        return true
     }
 }
 

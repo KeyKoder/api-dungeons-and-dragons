@@ -5,13 +5,6 @@ import { Router } from 'express'
 
 let router = Router()
 
-router.use((req, res, next) => {
-    if (!req.user) {
-        next(401)
-    }
-    next()
-})
-
 router.get('/', (req, res) => {
     res.send(characterController.getAll())
 })
@@ -28,6 +21,18 @@ router.post('/', (req, res) => {
 
 router.get('/:cid', (req, res) => {
     res.send(req.character)
+})
+
+router.put('/:cid', (req, res) => {
+    let ok = characterController.modify(req.params.cid, req.body)
+    if(ok) res.status(200).send()
+    else res.status(404).send()
+})
+
+router.delete('/:cid', (req, res) => {
+    let ok = characterController.delete(req.params.cid)
+    if(ok) res.status(200).send()
+    else res.status(404).send()
 })
 
 router.param('cid', (req, res, next, cid) => {
