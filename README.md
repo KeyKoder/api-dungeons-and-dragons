@@ -17,7 +17,7 @@ Una API prototipo para ser utilizada como base en un futuro proyecto de un table
 | DONE | `GET` | `/characters/:cid/equipment` | Devuelve los datos del equipamiento del personaje con id `:cid` | - |
 | DONE | `POST` | `/characters/:cid/equipment` | Añade un objeto al equipamiento del personaje con id `:cid` | [Equipment Data](#equipment-data) |
 | PLANNED FOR LATER | `GET` | `/characters/:cid/equipment/:eqid` | Devuelve los datos del objeto con id `:eqid` del equipamiento personaje con id `:cid` | - |
-| TODO | `POST` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
+| DONE | `POST` | `/roll` | Tira unos dados y devuelve sus resultados (ver [Roll Output](#roll-output)) | [Roll Data](#roll-data) |
 
 Todos los payloads y las respuestas serán formato JSON.
 
@@ -121,6 +121,8 @@ Algunos ejemplos de `templates` son:
 
 Puedes sumar y/o restar cualquier número de tiradas de dados, números y templates entre sí.
 
+El formato completo del string de la tirada se encuentra en la [wiki de Roll20](https://help.roll20.net/hc/en-us/articles/360037773133-Dice-Reference)
+
 El campo `context` contiene un objeto JSON con variables a reemplazar en formato clave-valor y una lista de ids de personajes que vayan a ser referenciados en la tirada.
 El campo `characters` del contexto tiene que estar presente siempre.
 
@@ -158,14 +160,9 @@ Ejemplos
 
 ## Roll Output
 
-TODO: Explain and define the format. (or link to the source format if we end up using an external library for doing the dice rolls)
+Para hacer las tiradas de dados utilizo la libería de node `@3d-dice/dice-roller-parser`.
 
-```json
-{
-
-}
-```
-
+El formato de salida se encuentra en [su wiki](https://www.npmjs.com/package/@3d-dice/dice-roller-parser#roll-result-output).
 
 ## Stats
 Las stats de cada personaje se referencian con su correspondiente abreviatura de 3 letras, ya sea en inglés o en español.
