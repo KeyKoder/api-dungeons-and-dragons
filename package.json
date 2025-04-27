@@ -1,0 +1,25 @@
+{
+  "name": "api-dungeons-and-dragons",
+  "version": "1.0.0",
+  "description": "A small API for use with my DnD VTT.",
+  "main": "index.js",
+  "author": "KeyKoder <victor.fernandez.montano@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "imports": {
+    "#controllers/*": "./src/controllers/*",
+    "#models/*": "./src/models/*",
+    "#views/*": "./src/views/*",
+    "#utils/*": "./src/utils/*"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "config": "^3.3.12",
+    "express": "^4.21.2",
+    "express-bearer-token": "^3.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
