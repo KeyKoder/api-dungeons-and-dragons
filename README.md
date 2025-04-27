@@ -7,8 +7,8 @@ Una API prototipo para ser utilizada como base en un futuro proyecto de un table
 # Endpoints
 | Status | Método | Endpoint | Descripción | Payload |
 | ------ | ------ | -------- | ----------- | ------- |
-| TODO | `POST` | `/auth/register` | Registra un nuevo usuario | Usuario y contraseña |
-| TODO | `POST` | `/auth/login` | Inicia la sesión del usuario | Usuario y contraseña |
+| NOT GONNA IMPLEMENT | `POST` | `/auth/register` | Registra un nuevo usuario | [User Data](#user-data) |
+| NOT GONNA IMPLEMENT | `POST` | `/auth/login` | Inicia la sesión del usuario | [User Data](#user-data) |
 | DONE | `GET` | `/characters` | Devuelve los datos de los personajes del usuario (ver [Character Data](#character-data)) | - |
 | DONE | `POST` | `/characters` | Crea un personaje nuevo y devuelve sus datos (usando el mismo formato que en `GET /characters`) | [Character Data](#character-data) |
 | TODO | `PUT` | `/characters/:cid` | Modifica el personaje con id `:cid` | [Character Data](#character-data) (se pueden omitir campos que no se vayan a modificar) |
@@ -24,6 +24,17 @@ Todos los payloads y las respuestas serán formato JSON.
 ---
 
 # Especificacion de los formatos
+
+## User Data
+
+El tipo User Data es un JSON simple con dos campos, `user` y `pass`.
+
+```json
+{
+    "user": "admin",
+    "pass": "admin"
+}
+```
 
 ## Character Data
 
@@ -56,6 +67,7 @@ El formato es el siguiente:
 
 Todos los campos son autoexplicativos para cualquiera que juegue DnD, para aquellos que no, se explican a continuación.
 * `name`: El nombre del personaje
+* `race`: La raza del personaje
 * `hp`: La vida del personaje (sin sumar el modificador de constitución)
 * `ac`: La Clase de Armadura (Armor Class) del personaje, se utiliza para comprobar si un ataque te golpea
 * `stats`: Las puntuaciones de las stats del personaje, suelen ir de 1 a 20. Las stats tienen un componente más llamado modificador, que se calcula a partir de su puntuación siguiendo la siguiente fórmula:

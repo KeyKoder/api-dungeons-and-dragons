@@ -1,6 +1,6 @@
 'use strict'
 
-import characterController from "#controllers/characters/index.js";
+import characterController from "#controllers/characters/index.js"
 import { Router } from 'express'
 
 let router = Router()

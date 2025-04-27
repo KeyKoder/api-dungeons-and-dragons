@@ -1,6 +1,6 @@
 'use strict'
 
-import characterModel from "#models/characters/index.js";
+import characterModel from "#models/characters/index.js"
 
 class CharacterController {
     getAll() {
