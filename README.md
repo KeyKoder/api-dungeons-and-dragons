@@ -73,7 +73,7 @@ Todos los campos son autoexplicativos para cualquiera que juegue DnD, para aquel
 * `stats`: Las puntuaciones de las stats del personaje, suelen ir de 1 a 20. Las stats tienen un componente más llamado modificador, que se calcula a partir de su puntuación siguiendo la siguiente fórmula:
 	
 	```math
-    \displaystyle MOD = \frac{ \lfloor STAT - 10 \rfloor }{2} \displaystyle
+    \displaystyle MOD = \lfloor \frac{ STAT - 10 }{2} \rfloor \displaystyle
     ```
 * `classes`: Las clases del personaje, muchos personajes suelen tener solo una clase, pero es un array para poder soportar multiclases.
     
